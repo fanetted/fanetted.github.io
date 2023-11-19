@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html = style="height: 100%;">
+  <head>
+    <title>Pax Dei - Kerys</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scripts/leaflet.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="dist/leaflet.awesome-markers.css">
+    <script src="scripts/leaflet.js"></script>
+	<script src="dist/leaflet.awesome-markers.js"></script>
+  </head>
+  
+  <body style="height: 100%;margin: 0;">
+    <div id="map" style="width: 100%; height: 100%; background: #ffffff;"></div>
+    <script type="text/javascript">
+  
+	//Creating the Map
+    
+    paxdeiLayer = L.tileLayer('map/{z}/{x}/{y}.jpg', {
+      continuousWorld: false,
+      noWrap: true,  
+      minZoom: 0,
+      maxZoom: 5,
+    });
+  
+	// Icons
+	var marker_Iron = L.AwesomeMarkers.icon({
+		icon:'chevron-up',
+		prefix:'glyphicon',
+		markerColor: 'gray'
+	});
+	
+	var marker_Coper = L.AwesomeMarkers.icon({
+		icon:'chevron-up',
+		prefix:'glyphicon',
+		markerColor: 'orange'
+	});
+	
+	var marker_Granite = L.AwesomeMarkers.icon({
+		icon:'chevron-up',
+		prefix:'glyphicon',
+		markerColor: 'pink'
+	});
+	
+	var marker_Limestone = L.AwesomeMarkers.icon({
+		icon:'chevron-up',
+		prefix:'glyphicon',
+		markerColor: 'lightgray'
+	});
+	
+	var marker_Grapes = L.AwesomeMarkers.icon({
+		icon:'apple',
+		prefix:'fa',
+		markerColor: 'darkpurple'
+	});
+	
+	var marker_BerserkerMushroom = L.AwesomeMarkers.icon({
+		icon:'cloud',
+		prefix:'fa',
+		markerColor: 'red'
+	});
+	
+	var marker_DeathCapMushroom = L.AwesomeMarkers.icon({
+		icon:'cloud',
+		prefix:'fa',
+		iconColor: 'black',
+		markerColor: 'white'
+	});
+	
+	var marker_PennybunMushroom = L.AwesomeMarkers.icon({
+		icon:'cloud',
+		prefix:'fa',
+		markerColor: 'beige'
+	});
+	
+	var marker_DivineMushroom = L.AwesomeMarkers.icon({
+		icon:'cloud',
+		prefix:'fa',
+		markerColor: 'purple'
+	});
+	 
+	//Markers
+	var iron1 = L.marker([-33.797409, 61.962891], {icon: marker_Iron}).bindPopup('<b>Iron</b>');
+	var iron2 = L.marker([-36.208823, 44.033203], {icon: marker_Iron}).bindPopup('<b>Iron</b>');
+	var iron3 = L.marker([-42.843751, 37.133789], {icon: marker_Iron}).bindPopup('<b>Iron</b>');
+	var iron4 = L.marker([-27.80021, 18.588867], {icon: marker_Iron}).bindPopup('<b>Iron</b>');
+	var iron5 = L.marker([-61.270233, 11.469727], {icon: marker_Iron}).bindPopup('<b>Iron</b>');
+	var coper1 = L.marker([-66.75725, 44.296875], {icon: marker_Coper}).bindPopup('<b>Coper</b>');
+	var granite1 = L.marker([-31.428663, 47.8125], {icon: marker_Granite}).bindPopup('<b>Granite</b>');
+	var granite2 = L.marker([-38.307181, 43.813477], {icon: marker_Granite}).bindPopup('<b>Granite</b>');
+	var granite3 = L.marker([-59.712097, 11.865234], {icon: marker_Granite}).bindPopup('<b>Granite</b>');
+	var grapes1 = L.marker([-41.079351, 44.780273], {icon: marker_Grapes}).bindPopup('<b>Grapes</b>');
+	var limestone1 = L.marker([-44.402392, 41.879883], {icon: marker_Limestone}).bindPopup('<b>Limestone</b>');
+	var BM1 = L.marker([-61.814664, 108.632813], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var BM2 = L.marker([-64.605038, 94.790039], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var BM3 = L.marker([-67.94165, 89.077148], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var BM4 = L.marker([-57.088515, 91.318359], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var PM1 = L.marker([-56.944974, 93.383789], {icon: marker_PennybunMushroom}).bindPopup('<b>Pennybun mushroom</b>');
+	var BM5 = L.marker([-46.377254, 100283203], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var PM2 = L.marker([-41.079351, 103.183594], {icon: marker_PennybunMushroom}).bindPopup('<b>Pennybun mushroom</b>');
+	var BM6 = L.marker([-41.046217, 76.68457], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var BM7 = L.marker([-46.55886, 81.210938], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var BM8 = L.marker([-47.100045, 80.068359], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var PM3 = L.marker([-47.279229, 82.133789], {icon: marker_PennybunMushroom}).bindPopup('<b>Pennybun mushroom</b>');
+	var BM9 = L.marker([-47.398349, 74.487305], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var DCM1 = L.marker([-49.124219, 74.311523], {icon: marker_DeathCapMushroom}).bindPopup('<b>Death cap mushroom</b>');
+	var BM10 = L.marker([-55.153766, 49.570313], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
+	var PM4 = L.marker([-57.797944, 45.483398], {icon: marker_PennybunMushroom}).bindPopup('<b>Pennybun mushroom</b>');
+	var DM1 = L.marker([-60.673179, 43.945313], {icon: marker_DivineMushroom}).bindPopup('<b>Divine mushroom</b>');
+
+	//Marker Groups
+	var mg_Iron = L.layerGroup([iron1, iron2, iron3, iron4, iron5]);
+	var mg_Coper = L.layerGroup([coper1]);
+	var mg_Granite = L.layerGroup([granite1, granite2, granite3]);
+	var mg_Grapes = L.layerGroup([grapes1]);
+	var mg_Limestone = L.layerGroup([limestone1]);
+	var mg_BerserkerMushroom = L.layerGroup([BM1, BM2, BM3, BM4, BM5, BM6, BM7, BM8, BM9, BM10]);
+	var mg_PennybunMushroom = L.layerGroup([PM1, PM2, PM3, PM4]);
+	var mg_DeathCapMushroom = L.layerGroup([DCM1]);
+	var mg_DivineMushroom = L.layerGroup([DM1]);
+	
+	//Marker Overlay
+    var overlays={
+        "Iron" : mg_Iron,
+		"Coper" : mg_Coper,
+		"Granite" : mg_Granite,
+		"Limeston" : mg_Limestone,
+		"Berserker Mushroom" : mg_BerserkerMushroom,
+		"Death cap Mushroom" : mg_DeathCapMushroom,
+		"Pennybun Mushroom" : mg_PennybunMushroom,
+		"Divine Mushroom" : mg_DivineMushroom,
+		"Grapes" : mg_Grapes,
+    }
+	
+	// Map creation
+	var map = L.map('map', {
+		center: [0, 0],
+		zoom: 2,
+		layers: [paxdeiLayer, mg_Iron, mg_Coper, mg_Granite, mg_Limestone, mg_BerserkerMushroom, mg_DeathCapMushroom, mg_PennybunMushroom, mg_DivineMushroom, mg_Grapes]
+	});
+	
+	//GROUP CONTROLS
+    L.control.layers(null, overlays).addTo(map);
+	
+	//Coordinate Finder
+    var marker = L.marker([0, 0], {
+      draggable: true,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+    </script>
+  </body>
+</html>
