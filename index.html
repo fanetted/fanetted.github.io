@@ -79,6 +79,12 @@
 		prefix:'fa',
 		markerColor: 'purple'
 	});
+	
+	var marker_HawthorneBerry = L.AwesomeMarkers.icon({
+		icon:'holly-berry',
+		prefix:'fa',
+		markerColor: 'purple'
+	});
 	 
 	//Markers
 	var iron1 = L.marker([-33.797409, 61.962891], {icon: marker_Iron}).bindPopup('<b>Iron</b>');
@@ -108,6 +114,25 @@
 	var BM10 = L.marker([-55.153766, 49.570313], {icon: marker_BerserkerMushroom}).bindPopup('<b>Berserker mushroom</b>');
 	var PM4 = L.marker([-57.797944, 45.483398], {icon: marker_PennybunMushroom}).bindPopup('<b>Pennybun mushroom</b>');
 	var DM1 = L.marker([-60.673179, 43.945313], {icon: marker_DivineMushroom}).bindPopup('<b>Divine mushroom</b>');
+	var iron6 = L.marker([-56.36525, 26.323242]).bindPopup('<b>Iron</b>');
+	var Hberry1 = L.marker([-56.292157, 25.708008]).bindPopup('<b>Hawthorne Berry</b>');
+	var limestone2 = L.marker([-55.973798, 25.751953]).bindPopup('<b>Limestone</b>');
+	var limestone3 = L.marker([-53.488046, 28.564453]).bindPopup('<b>Limestone</b>');
+	var iron7 = L.marker([-52.61639, 31.552734]).bindPopup('<b>Iron</b>');
+	var iron8 = L.marker([-50.625073, 29.223633]).bindPopup('<b>Iron</b>');
+	var limestone4 = L.marker([-47.517201, 30.541992]).bindPopup('<b>Limestone</b>');
+	var BM11 = L.marker([-46.800059, 100.0199531]).bindPopup('<b>Berserker mushroom</b>');
+	var BM12 = L.marker([-60.413852, 47.285156]).bindPopup('<b>Berserker mushroom</b>');
+	var PM5 = L.marker([-45.151053, 82.089844]).bindPopup('<b>Pennybun mushroom</b>');
+	var PM6 = L.marker([-54.927142, 45.74707]).bindPopup('<b>Pennybun mushroom</b>');
+	var PM7 = L.marker([-60.673179, 46.713867]).bindPopup('<b>Pennybun mushroom</b>');
+	var DM2 = L.marker([-61.959616, 50.405273]).bindPopup('<b>Divine mushroom</b>');
+	var DM3 = L.marker([-56.46249, 47.504833]).bindPopup('<b>Divine mushroom</b>');
+	var DCM2 = L.marker([-56.968936, 45.834961]).bindPopup('<b>Death cap mushroom</b>');
+	var DCM3 = L.marker([-60.020952, 45.175781]).bindPopup('<b>Death cap mushroom</b>');
+	var DCM4 = L.marker([-59.085739, 48.47168]).bindPopup('<b>Death cap mushroom</b>');
+	var DCM5 = L.marker([-59.910976, 48.47168]).bindPopup('<b>Death cap mushroom</b>');
+	var DCM6 = L.marker([-60.673179, 49.086914]).bindPopup('<b>Death cap mushroom</b>');
 
 	//Marker Groups
 	var mg_Iron = L.layerGroup([iron1, iron2, iron3, iron4, iron5]);
@@ -119,6 +144,8 @@
 	var mg_PennybunMushroom = L.layerGroup([PM1, PM2, PM3, PM4]);
 	var mg_DeathCapMushroom = L.layerGroup([DCM1]);
 	var mg_DivineMushroom = L.layerGroup([DM1]);
+	var mg_HawthorneBerry = L.layerGroup([Hberry1]);
+
 	
 	//Marker Overlay
     var overlays={
@@ -131,6 +158,7 @@
 		"Pennybun Mushroom" : mg_PennybunMushroom,
 		"Divine Mushroom" : mg_DivineMushroom,
 		"Grapes" : mg_Grapes,
+		"Hawthorne Berry" : mg_HawthorneBerry,
     }
 	
 	// Map creation
